@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #353535;
+}
+.wrapper{
+    width: 400px;
+    background: #FFFF;
+    border-radius: 3%;
+}
+.wrapper header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 50px 0;
+}
+header .date{
+    font-size: 25px;
+    font-weight: 600;
+}
+header .navegation span{
+    display: inline-block;
+    height: 38px;
+    width: 38px;
+    color: #878787;
+    margin: 0 1px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+}
+.calendar{
+    padding: 20px;
+}
+.calendar .weeks li{
+    font-weight: 600;
+}
+.calendar ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.weeks{
+    margin-bottom: 30px;
+}
+.calendar ul li{
+    width: calc(100%/7);
+}
+.days li{
+    height: 70px;
+}
+.activate{
+    color: #FFFF;
+    justify-content: center;
+    background: #5E5DF0;
+}
+.inactivate{
+    color: #c4c4c4;
+}
+
+.inactivate-next-month{
+    color: #FFFF;
+    justify-content: center;
+    background: #cfcfff;
+}
