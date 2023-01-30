@@ -10,9 +10,16 @@
 <body>
     <div class="input">
         <h1 class="app-title">Folgas App</h1>
-        <p class="desciption">Selecione seu próximo primeiro dia de trabalho depois da folga</p>
-        <label for="start">Primeiro dia de trabalho</label>
-        <input id="start" type="date" name="first-day-work">
+        <div class="select-scale">
+            <p class="desciption">Selecione sua escala de folgas</p>
+            <select name="list" id="folgas-lista">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="todas">Mostrar todas</option>
+            </select>
+        </div>
         <a href="/calendario.html"><button id="btn" class="confirm-btn">Confirmar</button></a>
     </div>
     

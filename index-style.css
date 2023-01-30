@@ -24,19 +24,20 @@ body{
     margin: 10px;
 }
 .input p{
-    width: 300px;
     font-size: 12px;
     margin: 10px;
-}
-.input label{
-    font-size: 15px;
-    font-weight: 300;
-    margin: 5px;
 }
 input{
     display: flex;
     align-items: center;
     width: 200px;
+}
+.select-scale{
+    display: flex;
+    align-items: center;
+}
+.input select{
+    height: 22px;
 }
 .confirm-btn{
   margin: 20px 0;

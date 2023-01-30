@@ -56,17 +56,47 @@ header .navegation span{
 .days li{
     height: 70px;
 }
-.activate{
+.activate1{
     color: #FFFF;
     justify-content: center;
     background: #5E5DF0;
+}
+.activate2{
+    color: #FFFF;
+    justify-content: center;
+    background: #d62424;
+}
+.activate3{
+    color: #FFFF;
+    justify-content: center;
+    background: #1ead42;
+}
+.activate4{
+    color: #FFFF;
+    justify-content: center;
+    background: #d6d306;
 }
 .inactivate{
     color: #c4c4c4;
 }
 
-.inactivate-next-month{
+.inactivate-next-month1{
     color: #FFFF;
     justify-content: center;
     background: #cfcfff;
+}
+.inactivate-next-month2{
+    color: #FFFF;
+    justify-content: center;
+    background: #ffaeae;
+}
+.inactivate-next-month3{
+    color: #FFFF;
+    justify-content: center;
+    background: #86fca4;
+}
+.inactivate-next-month4{
+    color: #b8b8b8;
+    justify-content: center;
+    background: #fffd9b
 }

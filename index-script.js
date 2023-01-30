@@ -1,8 +1,8 @@
 const confirmBtn = document.getElementById('btn')
 
 confirmBtn.addEventListener("click", function(){
-    const firstDayofWork = document.getElementById('start')
-    const firstDayofWorkValue = firstDayofWork.value
-    localStorage.setItem('firstDayofWork', firstDayofWorkValue)
+    const workScaleElement = document.getElementById('folgas-lista')
+    const workScale = workScaleElement.value
+    localStorage.setItem('workScale', workScale)
     window.location.href='calendario.html'
 })

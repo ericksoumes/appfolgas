@@ -2,8 +2,23 @@ const date = document.querySelector('.date')
 const days = document.querySelector('.days')
 const navegation = document.querySelectorAll('.navegation span')
 const months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
-const dayofWork = localStorage.getItem('firstDayofWork')
-let firstDayofWork = new Date(dayofWork)
+const workScale = localStorage.getItem('workScale')
+
+const discoverfirstDay = () => {
+    let firstDay = new Date()
+    if (workScale === '1') {
+        firstDay = new Date('2023-01-01 ')
+    } else if (workScale === '2') {
+        firstDay = new Date('2023-01-03 ')
+    } else if (workScale === '3') {
+        firstDay = new Date('2023-01-05 ')
+    } else if (workScale === '4') {
+        firstDay = new Date('2023-01-07 ')
+    }
+    return firstDay
+}
+let firstDayofWork = discoverfirstDay()
+console.log(firstDayofWork)
 
 
 const workCicle = () => {
@@ -32,17 +47,17 @@ actualYear = actualDate.getFullYear()
 const renderCalendar = () => {
     let previousMonth = []
     for (let i = 0; i < dayOff.length; i++) {
-        dayOff[i].getMonth() === actualMonth-1 ? previousMonth.push(dayOff[i].getDate()) : ''
+        dayOff[i].getMonth() === actualMonth-1 && dayOff[i].getFullYear() === actualYear ? previousMonth.push(dayOff[i].getDate()) : ''
     }
     console.log(previousMonth)
     let thisMonth = []
     for (let i = 0; i < dayOff.length; i++) {
-        dayOff[i].getMonth() === actualMonth ? thisMonth.push(dayOff[i].getDate()) : ''
+        dayOff[i].getMonth() === actualMonth && dayOff[i].getFullYear() === actualYear ? thisMonth.push(dayOff[i].getDate()) : ''
     }
     console.log(thisMonth)
     let nextMonth = []
     for (let i = 0; i < dayOff.length; i++) {
-        dayOff[i].getMonth() === actualMonth+1 ? nextMonth.push(dayOff[i].getDate()) : ''
+        dayOff[i].getMonth() === actualMonth+1 && dayOff[i].getFullYear() === actualYear? nextMonth.push(dayOff[i].getDate()) : ''
     }
     console.log(nextMonth)
     let fistDayofMonth = new Date(actualYear, actualMonth, 1).getDay()
@@ -51,15 +66,15 @@ const renderCalendar = () => {
     let lastDateofMonth = new Date(actualYear, actualMonth, lastDayofMonth+1).getDay()
     let liDays = ''
     for (let i = fistDayofMonth; i > 0; i--) {
-        let lastMonthDayOff = previousMonth.includes(lastDayofLastMonth - i +1) ? 'inactivate-next-month' : ''
+        let lastMonthDayOff = previousMonth.includes(lastDayofLastMonth - i +1) ? `inactivate-next-month${workScale}` : ''
         liDays += `<li class='inactivate ${lastMonthDayOff}'>${lastDayofLastMonth - i +1}</li>`
     }
     for (let i = 1; i <= lastDayofMonth; i++) {
-        let isDayOff = thisMonth.includes(i) ? 'activate' : ''
+        let isDayOff = thisMonth.includes(i) ? `activate${workScale}` : ''
         liDays += `<li class='${isDayOff}'>${i}</li>`
     }
     for (let i = lastDateofMonth; i < 7; i++) {
-        let nextMonthDayOff = nextMonth.includes(i - lastDateofMonth +1) ? 'inactivate-next-month' : ''
+        let nextMonthDayOff = nextMonth.includes(i - lastDateofMonth +1) ? `inactivate-next-month${workScale}` : ''
         liDays += `<li class='inactivate ${nextMonthDayOff}'>${i - lastDateofMonth +1}</li>`
         
     }
