@@ -100,3 +100,38 @@ header .navegation span{
     justify-content: center;
     background: #fffd9b
 }
+.cc{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.folga{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3px;
+}
+.square-folga1{
+    width: 17px;
+    height: 17px;
+    background-color: #5E5DF0;
+}
+.square-folga2{
+    width: 17px;
+    height: 17px;
+    background-color: #d62424;
+}
+.square-folga3{
+    width: 17px;
+    height: 17px;
+    background-color: #1ead42;
+}
+.square-folga4{
+    width: 17px;
+    height: 17px;
+    background-color: #d6d306;
+}
+.folga p{
+    margin: 10px 10px 10px 4px;
+}
