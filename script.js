@@ -16,7 +16,7 @@ let firstDayofWork4 = new Date('2022-12-30 ')
 
 const workCicle = (firstDayofWork) => {
     let inicio = new Date(firstDayofWork)
-    let endOfLoop = new Date('2023-12-31 ')
+    let endOfLoop = new Date('2025-12-31 ')
     let dayOff = []
     while(inicio < endOfLoop){
         for (let i = 1; i <= 5; i++) {
