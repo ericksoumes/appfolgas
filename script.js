@@ -9,14 +9,14 @@ let actualDate = new Date()
 actualMonth = actualDate.getMonth()
 actualYear = actualDate.getFullYear()
 
-let firstDayofWork1 = new Date('2022-12-24 ')
-let firstDayofWork2 = new Date('2022-12-26 ')
-let firstDayofWork3 = new Date('2022-12-28 ')
-let firstDayofWork4 = new Date('2022-12-30 ')
+let firstDayofWork1 = new Date('Sat Dec 24 2022 00:00:00 GMT-0300 (Brasilia Standard Time)')
+let firstDayofWork2 = new Date('Mon Dec 26 2022 00:00:00 GMT-0300 (Brasilia Standard Time)')
+let firstDayofWork3 = new Date('Wed Dec 28 2022 00:00:00 GMT-0300 (Brasilia Standard Time)')
+let firstDayofWork4 = new Date('Fri Dec 30 2022 00:00:00 GMT-0300 (Brasilia Standard Time)')
 
 const workCicle = (firstDayofWork) => {
     let inicio = new Date(firstDayofWork)
-    let endOfLoop = new Date('2025-12-31 ')
+    let endOfLoop = new Date('Wed Dec 31 2050 00:00:00 GMT-0300 (Brasilia Standard Time)')
     let dayOff = []
     while(inicio < endOfLoop){
         for (let i = 1; i <= 5; i++) {
@@ -35,7 +35,6 @@ const dayOff2 = workCicle(firstDayofWork2)
 const dayOff3 = workCicle(firstDayofWork3)
 const dayOff4 = workCicle(firstDayofWork4)
 
-
 const renderCalendar = (dayOff) => {
     let previousMonth = []
     for (let i = 0; i < dayOff.length; i++) {
@@ -49,18 +48,18 @@ const renderCalendar = (dayOff) => {
     for (let i = 0; i < dayOff.length; i++) {
         dayOff[i].getMonth() === actualMonth+1 && dayOff[i].getFullYear() === actualYear? nextMonth.push(dayOff[i].getDate()) : ''
     }
-    let fistDayofMonth = new Date(actualYear, actualMonth, 1).getDay()
+    let firstDayofMonth = new Date(actualYear, actualMonth, 1).getDay()
     let lastDayofMonth = new Date(actualYear, actualMonth+1, 0).getDate()
     let lastDayofLastMonth = new Date(actualYear, actualMonth, 0).getDate()
     let lastDateofMonth = new Date(actualYear, actualMonth, lastDayofMonth+1).getDay()
     let liDays = ''
-    for (let i = fistDayofMonth; i > 0; i--) {
+    for (let i = firstDayofMonth; i > 0; i--) {
         let lastMonthDayOff = previousMonth.includes(lastDayofLastMonth - i +1) ? `inactivate-next-month${workScale}` : ''
         liDays += `<li class='inactivate ${lastMonthDayOff}'>${lastDayofLastMonth - i +1}</li>`
     }
     for (let i = 1; i <= lastDayofMonth; i++) {
-        let isDayOff = thisMonth.includes(i) ? `activate${workScale}` : ''
-        liDays += `<li class='${isDayOff}'>${i}</li>`
+        let isDayOff = thisMonth.includes(i) ? `class='activate${workScale}'` : ''
+        liDays += `<li ${isDayOff}>${i}</li>`
     }
     for (let i = lastDateofMonth; i < 7; i++) {
         let nextMonthDayOff = nextMonth.includes(i - lastDateofMonth +1) ? `inactivate-next-month${workScale}` : ''
@@ -109,13 +108,13 @@ const renderCalendar2 = () => {
     const nextMonth3 = getNextMonth(dayOff3)
     const nextMonth4 = getNextMonth(dayOff4)
 
-    let fistDayofMonth = new Date(actualYear, actualMonth, 1).getDay()
+    let firstDayofMonth = new Date(actualYear, actualMonth, 1).getDay()
     let lastDayofMonth = new Date(actualYear, actualMonth+1, 0).getDate()
     let lastDayofLastMonth = new Date(actualYear, actualMonth, 0).getDate()
     let lastDateofMonth = new Date(actualYear, actualMonth, lastDayofMonth+1).getDay()
     let liDays = ''
     
-    for (let i = fistDayofMonth; i > 0; i--) {
+    for (let i = firstDayofMonth; i > 0; i--) {
         let lastMonthDayOff = ''
         if (previousMonth1.includes(lastDayofLastMonth - i +1)) {
             lastMonthDayOff = `inactivate-next-month1`
